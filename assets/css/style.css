@@ -1,0 +1,57 @@
+body{
+    background-image: url("https://media.giphy.com/media/TxVVB6PfWMjE4/giphy.gif");
+    background-position: center center;
+    background-size:300px; 
+    background-repeat: repeat;
+    font-family: 'Jua', sans-serif;
+    font-size: 30px;
+}
+.question{
+    font-weight: 600;
+    color:antiquewhite;
+    
+}
+
+header{
+    color:antiquewhite;
+}
+
+.lead{
+    color:antiquewhite;
+}
+.box {
+    background: rgba(128, 128, 128, 0.308);
+    background-blend-mode: multiply;
+
+}
+.answers {
+  margin-bottom: 20px;
+  color:antiquewhite;
+}
+.answers label{
+  display: block;
+}
+#submit{
+    font-family: 'Jua', sans-serif;
+    font-size: 40px;
+    background-color: #279;
+    color: #fff;
+    border: 0px;
+    border-radius: 3px;
+    padding: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+#submit:hover{
+    background-color: #38a;
+}
+
+#results{
+    color:antiquewhite;
+}
+
+#start{
+    background: antiquewhite;
+    font-family: 'Jua', sans-serif;
+    font-size: 40px;
+}
