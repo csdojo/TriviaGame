@@ -4,6 +4,7 @@ $("#results").hide();
 $("#submit").hide();
 $("#start").show();
 var clockRunning = false;
+
 $("#start").on("click", function () {
   $("#quiz").show();
   $("#submit").show();
@@ -89,24 +90,34 @@ function showResults() {
 
   // for each question...
   myQuestions.forEach((currentQuestion, questionNumber) => {
-      // find selected answer
-      var answerContainer = answerContainers[questionNumber];
-      var selector = `input[name=question${questionNumber}]:checked`;
-      var userAnswer = (answerContainer.querySelector(selector) || {}).value;
+    // find selected answer
+    var answerContainer = answerContainers[questionNumber];
+    var selector = `input[name=question${questionNumber}]:checked`;
+    var userAnswer = (answerContainer.querySelector(selector) || {}).value;
+    // console.log(userAnswer);
 
-      // if answer is correct
-      if (userAnswer === currentQuestion.correctAnswer) {
-          // add to the number of correct answers
-          numCorrect++;
+    console.log(typeof userAnswer, userAnswer, userAnswer == "undefined", userAnswer == undefined)
+    // if answer is correct
+    if (userAnswer === currentQuestion.correctAnswer) {
+      // add to the number of correct answers
+      numCorrect++;
+      console.log("correct", numCorrect, numIncorrect, unanswered);
 
-      } else {
-          
-          numIncorrect++;}
-      
+    } else if (userAnswer == undefined) {
+            console.log("none", numCorrect, numIncorrect, unanswered);
+
+            unanswered++;
+
+    } else {
+            console.log("wrong",numCorrect,  numIncorrect, unanswered);
+
+      numIncorrect++;
+    }
+
   });
 
 
-resultsContainer.innerHTML = `ALL DONE! <br> Correct Answers: ${numCorrect} <br> Incorrect Answers: ${numIncorrect}<br> Unanswered: ${unanswered}`;
+  resultsContainer.innerHTML = `ALL DONE! <br> Correct Answers: ${numCorrect} <br> Incorrect Answers: ${numIncorrect}<br> Unanswered: ${unanswered}`;
 }
 
 var quizContainer = document.getElementById("quiz");
