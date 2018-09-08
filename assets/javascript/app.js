@@ -104,12 +104,10 @@ function showResults() {
       console.log("correct", numCorrect, numIncorrect, unanswered);
 
     } else if (userAnswer == undefined) {
-            console.log("none", numCorrect, numIncorrect, unanswered);
 
             unanswered++;
 
     } else {
-            console.log("wrong",numCorrect,  numIncorrect, unanswered);
 
       numIncorrect++;
     }
